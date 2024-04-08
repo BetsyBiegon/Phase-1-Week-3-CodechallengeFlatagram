@@ -1,0 +1,54 @@
+{
+  "images": [
+    {
+      "id": "1",
+      "title": "Woofing those bugs away",
+      "likes": 11,
+      "image": "./assets/coder-dog.png",
+      "comments": [
+        {
+          "id": 1,
+          "imageId": 1,
+          "content": "What a cute dog!"
+        },
+        {
+          "id": 2,
+          "imageId": 1,
+          "content": "He's got a nose for bugs!"
+        },
+        {
+          "id": 3,
+          "imageId": 1,
+          "content": "Woof!"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "da0e",
+      "imageId": 1,
+      "content": "yeiyyy"
+    },
+    {
+      "id": "0742",
+      "imageId": 1,
+      "content": "yeiyyy"
+    },
+    {
+      "id": "1c6b",
+      "imageId": 1,
+      "content": "yeiyyy"
+    },
+    {
+      "id": "7891",
+      "imageId": 1,
+      "content": "yeiyyy"
+    },
+    {
+      "id": "b33c",
+      "imageId": 1,
+      "content": "awww!"
+    }
+  ]
+}
