@@ -4,21 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flatagram</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h2 id="card-title" class="title">Flatagram</h2> <!-- Added "Flatagram" title -->
-    <img id="image-container" class="image" src="" alt="Flatagram Image">
-    <div class="actions">
-      <button id="like-button" class="button">Like</button>
-      <span id="likes-count" class="likes">0</span>
+  <!-- logo -->
+  <img class="logo" src="assets/flatagram-logo.png" />
+
+  <!-- image card -->
+  <div class="image-container">
+    <div class="image-card">
+      <h2 id="card-title" class="title">Woofing those bugs away</h2>
+      <img id="card-image" class="image" src="./assets/coder-dog.png" alt="Title of image goes here too" />
+      <div class="likes-section">
+        <span id="like-count" class="likes">0 likes</span>
+        <button id="like-button" class="like-button" onclick="increaseLikes()">♥</button> <!-- Added onclick event -->
+      </div>
+      <ul id="comments-list" class="comments">
+        <li>What a cute dog!</li>
+        <li>He's got a nose for bugs!</li>
+        <li>Woof!</li>
+      </ul>
+      <form id="comment-form" class="comment-form" onsubmit="addComment(event)">
+        <input
+          class="comment-input"
+          type="text"
+          name="comment"
+          id="comment-input"
+          placeholder="Add a comment..."
+        />
+        <button class="comment-button" type="submit">Post</button> 
+      </form>
     </div>
-    <form id="comment-form" class="comment-form">
-      <input type="text" id="comment-input" class="input" placeholder="Add a comment">
-      <button type="post" class="button">Post</button>
-    </form>
-    <ul id="comments-list" class="comments"></ul>
   </div>
-  <script src="src/index.js"></script>
+
+  <script>
+    // JavaScript function to increase likes
+    function increaseLikes() {
+      var likeCount = document.getElementById("like-count");
+      var currentLikes = parseInt(likeCount.innerText);
+      likeCount.innerText = (currentLikes + 1) + " likes";
+    }
+
+    // JavaScript function to add a comment
+    function addComment(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var commentInput = document.getElementById("comment-input");
+      var comment = commentInput.value.trim(); // Get the comment text
+      if (comment !== "") { // Check if comment is not empty
+        var commentsList = document.getElementById("comments-list");
+        var newComment = document.createElement("li");
+        newComment.textContent = comment;
+        commentsList.appendChild(newComment);
+        commentInput.value = ""; // Clear the input field after posting comment
+      }
+    }
+  </script>
 </body>
 </html>

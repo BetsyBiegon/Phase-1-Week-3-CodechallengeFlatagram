@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const baseUrl = "http://localhost:3000";
-  const imageId = 1; // Assuming we're working with the image ID 1
+  const imageId = 1; 
 
   const imageContainer = document.getElementById("image-container");
   const likesCounter = document.getElementById("likes-count");
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       imageContainer.setAttribute("src", imageData.image);
       likesCounter.textContent = imageData.likes;
 
-      // Clear comments list before appending new comments
       commentsList.innerHTML = "";
       imageData.comments.forEach(comment => {
         const li = document.createElement("li");
